@@ -1,0 +1,9 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/Matthew/Desktop/Hedgemen/Content/button_down.png","C:/Users/Matthew/Desktop/Hedgemen/Content/bin/DesktopGL/button_down.xnb","TextureProcessor","Texture2DContent",715,4181,0.3064438
+"C:/Users/Matthew/Desktop/Hedgemen/Content/button_hover.png","C:/Users/Matthew/Desktop/Hedgemen/Content/bin/DesktopGL/button_hover.xnb","TextureProcessor","Texture2DContent",6916,4181,0.0119682
+"C:/Users/Matthew/Desktop/Hedgemen/Content/button_regular.png","C:/Users/Matthew/Desktop/Hedgemen/Content/bin/DesktopGL/button_regular.xnb","TextureProcessor","Texture2DContent",666,4181,0.0109707
+"C:/Users/Matthew/Desktop/Hedgemen/Content/main_menu_background.png","C:/Users/Matthew/Desktop/Hedgemen/Content/bin/DesktopGL/main_menu_background.xnb","TextureProcessor","Texture2DContent",1402,28309,0.0109708
+"C:/Users/Matthew/Desktop/Hedgemen/Content/main_menu_music.ogg","C:/Users/Matthew/Desktop/Hedgemen/Content/bin/DesktopGL/main_menu_music.xnb","SongProcessor","SongContent",1507991,133,1.630322
+"C:/Users/Matthew/Desktop/Hedgemen/Content/pixelade_bold.spritefont","C:/Users/Matthew/Desktop/Hedgemen/Content/bin/DesktopGL/pixelade_bold.xnb","FontDescriptionProcessor","SpriteFontContent",2068,37905,0.2134898
+"C:/Users/Matthew/Desktop/Hedgemen/Content/pixelade_italics.spritefont","C:/Users/Matthew/Desktop/Hedgemen/Content/bin/DesktopGL/pixelade_italics.xnb","FontDescriptionProcessor","SpriteFontContent",2070,37905,0.2388144
+"C:/Users/Matthew/Desktop/Hedgemen/Content/pixelade_regular.spritefont","C:/Users/Matthew/Desktop/Hedgemen/Content/bin/DesktopGL/pixelade_regular.xnb","FontDescriptionProcessor","SpriteFontContent",2071,37905,0.0289226

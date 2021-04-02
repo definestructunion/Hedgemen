@@ -1,0 +1,38 @@
+{
+    "schema_version": 1,
+
+    "namespace": "debugmod",
+
+    "version": "0.0.1",
+
+    "name": "Debug Mod",
+
+    "description": "Debug mod for testing purposes",
+
+    "authors": [
+        "KhysDaiLederhosen"
+    ],
+
+    "contact": {
+        "homepage": "https://hedgemen.com",
+        "source": "https://github.com/definestructunion/Hedgemen"
+    },
+
+    "depends": {
+        "mods": [
+            
+        ],
+
+        "incompatible_mods": [
+            
+        ],
+
+        "dlls": [
+            
+        ],
+
+        "hedgemen": "0.0.1"
+    },
+
+    "mod_main": ""
+}

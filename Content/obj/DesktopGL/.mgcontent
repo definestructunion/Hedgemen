@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/Matthew/Desktop/Hedgemen/Content/button_down.png</File>
+    <File>C:/Users/Matthew/Desktop/Hedgemen/Content/button_hover.png</File>
+    <File>C:/Users/Matthew/Desktop/Hedgemen/Content/button_regular.png</File>
+    <File>C:/Users/Matthew/Desktop/Hedgemen/Content/main_menu_background.png</File>
+    <File>C:/Users/Matthew/Desktop/Hedgemen/Content/main_menu_music.ogg</File>
+    <File>C:/Users/Matthew/Desktop/Hedgemen/Content/pixelade_bold.spritefont</File>
+    <File>C:/Users/Matthew/Desktop/Hedgemen/Content/pixelade_italics.spritefont</File>
+    <File>C:/Users/Matthew/Desktop/Hedgemen/Content/pixelade_regular.spritefont</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>

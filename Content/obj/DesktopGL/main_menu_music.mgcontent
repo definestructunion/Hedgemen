@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>C:/Users/Matthew/Desktop/Hedgemen/Content/main_menu_music.ogg</SourceFile>
+  <SourceTime>2021-03-22T21:55:53.2549099-07:00</SourceTime>
+  <DestFile>C:/Users/Matthew/Desktop/Hedgemen/Content/bin/DesktopGL/main_menu_music.xnb</DestFile>
+  <DestTime>2021-03-30T18:11:39.6287197-07:00</DestTime>
+  <Importer>OggImporter</Importer>
+  <ImporterTime>2018-12-08T08:35:54-08:00</ImporterTime>
+  <Processor>SongProcessor</Processor>
+  <ProcessorTime>2018-12-08T08:35:54-08:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput>
+    <string>C:/Users/Matthew/Desktop/Hedgemen/Content/bin/DesktopGL/main_menu_music.ogg</string>
+  </BuildOutput>
+</PipelineBuildEvent>

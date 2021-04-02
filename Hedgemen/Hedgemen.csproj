@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>exe</OutputType>
+        <TargetFramework>net5</TargetFramework>
+        <DefineConstants>XNA_IMPLEMENTATION_FNA</DefineConstants>
+        <RootNamespace>Hgm</RootNamespace>
+        <AssemblyName>Hedgemen</AssemblyName>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <Reference Include="FNA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <HintPath>..\lib\FNA\FNA.dll</HintPath>
+        </Reference>
+        <Reference Include="SpriteFontPlus.FNA, Version=0.9.2.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\lib\SpriteFontPlus.FNA.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="$(SolutionDir)\res\**" CopyToOutputDirectory="PreserveNewest" LinkBase="./" Visible="false" />
+    </ItemGroup>
+    
+</Project>
