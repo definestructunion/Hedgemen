@@ -9,25 +9,25 @@ namespace Hgm.Engine.Assets
 {
 	public class AssetManager : ContentManager
 	{
-		private Dictionary<ResourceLocation, object> assets;
+		private Dictionary<ResourceName, object> assets;
 
-		private Dictionary<ResourceLocation, AssetLoadPass> loadPasses;
+		private Dictionary<ResourceName, AssetLoadPass> loadPasses;
 		
 		public GraphicsDeviceManager Graphics { get; private set; }
 		
-		public AssetManager(Game game, GraphicsDeviceManager graphics) : base(game.Services, "")
+		public AssetManager(Microsoft.Xna.Framework.Game game, GraphicsDeviceManager graphics) : base(game.Services, "")
 		{
 			Graphics = graphics;
-			assets = new Dictionary<ResourceLocation, object>();
-			loadPasses = new Dictionary<ResourceLocation, AssetLoadPass>();
+			assets = new Dictionary<ResourceName, object>();
+			loadPasses = new Dictionary<ResourceName, AssetLoadPass>();
 		}
 
-		public T Load<T>(ResourceLocation resource)
+		public T Load<T>(ResourceName resource)
 		{
 			return (T)assets[resource];
 		}
 
-		public T LoadDirect<T>(ResourceLocation resourceName, T asset)
+		public T LoadDirect<T>(ResourceName resourceName, T asset)
 		{
 			if (assets.ContainsKey(resourceName))
 				return (T) assets[resourceName];
@@ -43,7 +43,7 @@ namespace Hgm.Engine.Assets
 				return (T)assets[loadPass.ResourceName];
 			
 			// hack to avoid ContentLoadException with SongReader.Read with slashes
-			ResourceLocation indexNameSlashesReplaced = loadPass.ResourceName.FullName.Replace("/", "___").Replace("\\", "___");
+			ResourceName indexNameSlashesReplaced = loadPass.ResourceName.FullName.Replace("/", "___").Replace("\\", "___");
 			loadPasses.Add(indexNameSlashesReplaced, loadPass);
 			
 			var asset = ReadAsset<T>(indexNameSlashesReplaced, null);
@@ -55,7 +55,7 @@ namespace Hgm.Engine.Assets
 
 		protected override Stream OpenStream(string assetName)
 		{
-			var resource = new ResourceLocation(assetName);
+			var resource = new ResourceName(assetName);
 
 			var loadPass = loadPasses[resource];
 			

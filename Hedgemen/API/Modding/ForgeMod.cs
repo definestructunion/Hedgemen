@@ -7,11 +7,7 @@ namespace Hgm.API.Modding
 		public DirectoryHandle Directory { get; private set; }
 		
 		public ForgeModManifest Manifest { get; private set; }
-		
-		public ForgeLibraryManifest LibraryManifest { get; private set; }
-		
-		public ForgeEditorialManifest EditorialManifest { get; private set; }
-		
+
 		public ForgeMod()
 		{
 			
@@ -19,14 +15,15 @@ namespace Hgm.API.Modding
 
 		public void Populate(
 			DirectoryHandle directory, 
-			ForgeModManifest manifest,
-			ForgeLibraryManifest libraryManifest,
-			ForgeEditorialManifest editorialManifest)
+			ForgeModManifest manifest)
 		{
 			Directory = directory;
 			Manifest = manifest;
-			LibraryManifest = libraryManifest;
-			EditorialManifest = editorialManifest;
+		}
+
+		public virtual void Setup()
+		{
+			
 		}
 	}
 }

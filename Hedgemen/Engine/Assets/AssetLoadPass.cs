@@ -5,12 +5,12 @@ namespace Hgm.Engine.Assets
 {
 	public struct AssetLoadPass
 	{
-		public ResourceLocation ResourceName;
+		public ResourceName ResourceName;
 		public FileHandle File;
 		
-		public AssetLoadPass(ResourceLocation resourceLocation, FileHandle file)
+		public AssetLoadPass(ResourceName resourceName, FileHandle file)
 		{
-			ResourceName = resourceLocation;
+			ResourceName = resourceName;
 			File = file;
 		}
 	}

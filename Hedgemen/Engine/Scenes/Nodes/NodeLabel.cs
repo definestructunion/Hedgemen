@@ -38,7 +38,7 @@ namespace Hgm.Engine.Scenes.Nodes
 
 		private FontData fontData;
 
-		private ResourceLocation GetCurrentFontResource() => fontData.FromFontStyle(fontStyle);
+		private ResourceName GetCurrentFontResource() => fontData.FromFontStyle(fontStyle);
 
 		private void UpdateFont()
 		{

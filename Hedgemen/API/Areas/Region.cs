@@ -1,6 +1,6 @@
 ﻿namespace Hgm.API.Areas
 {
-	public abstract class AreaMap
+	public abstract class Region
 	{
 		
 	}

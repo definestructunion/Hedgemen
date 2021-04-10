@@ -10,9 +10,9 @@ namespace Hgm.Engine.Graphics
 
 		public SpriteFont SpriteFont => spriteFont;
 
-		private ResourceLocation indexName;
+		private ResourceName indexName;
 
-		public ResourceLocation IndexName
+		public ResourceName IndexName
 		{
 			get => indexName;
 			set
@@ -22,7 +22,7 @@ namespace Hgm.Engine.Graphics
 			}
 		}
 
-		public Font(ResourceLocation indexName)
+		public Font(ResourceName indexName)
 		{
 			spriteFont = Hedgemen.Game.Assets.Load<SpriteFont>(indexName);
 		}

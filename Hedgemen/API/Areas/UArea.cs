@@ -4,7 +4,7 @@
 	{
 		private IAreaBehaviour behaviour;
 
-		private AreaMap map;
+		private UAreaMap map;
 		
 		private UArea()
 		{
@@ -13,12 +13,13 @@
 
 		public UArea(UAreaArgs args)
 		{
-			
+			map = new UAreaMap(args.TypeInfo.Width, args.TypeInfo.Height);
+			behaviour = Hedgemen.Libraries.AreaBehaviours[args.TypeInfo.AreaBehaviourName]();
 		}
 	}
 
 	public struct UAreaArgs
 	{
-		
+		public UAreaTypeInfo TypeInfo;
 	}
 }

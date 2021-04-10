@@ -4,6 +4,6 @@ namespace Hgm.API.Resources
 {
 	public interface IResource
 	{
-		public ResourceLocation ResourceName { get; }
+		public ResourceName ResourceName { get; }
 	}
 }

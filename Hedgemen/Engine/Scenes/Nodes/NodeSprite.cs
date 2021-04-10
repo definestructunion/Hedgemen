@@ -7,7 +7,7 @@ namespace Hgm.Engine.Scenes.Nodes
 	{
 		private Sprite sprite;
 		
-		public NodeSprite(ResourceLocation resource, Scene scene, Node parent) : base(scene, parent)
+		public NodeSprite(ResourceName resource, Scene scene, Node parent) : base(scene, parent)
 		{
 			sprite = new Sprite(resource);
 		}

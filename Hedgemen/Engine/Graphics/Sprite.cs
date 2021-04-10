@@ -11,11 +11,11 @@ namespace Hgm.Engine.Graphics
 
 		internal Texture2D Texture => texture;
 		
-		private ResourceLocation resourceName;
+		private ResourceName resourceName;
 
 		public Rectangle Bounds => texture.Bounds;
 		
-		public ResourceLocation ResourceName
+		public ResourceName ResourceName
 		{
 			get => resourceName;
 			set
@@ -31,7 +31,7 @@ namespace Hgm.Engine.Graphics
 
 		public bool IsUnsafe => isUnsafe;
 
-		public Sprite(ResourceLocation resourceName)
+		public Sprite(ResourceName resourceName)
 		{
 			this.resourceName = resourceName;
 			texture = Hedgemen.Game.Assets.Load<Texture2D>(resourceName);
@@ -46,7 +46,7 @@ namespace Hgm.Engine.Graphics
 		public void SetTexture(UnsafeTextureInfo info)
 		{
 			Dispose();
-			this.resourceName = ResourceLocation.Empty;
+			this.resourceName = ResourceName.Empty;
 			texture = info.ToTexture();
 			isUnsafe = true;
 		}
@@ -54,7 +54,7 @@ namespace Hgm.Engine.Graphics
 		public void Dispose()
 		{
 			if (!isUnsafe) return;
-			this.resourceName = ResourceLocation.Empty;
+			this.resourceName = ResourceName.Empty;
 			texture.Dispose();
 			isUnsafe = true;
 		}

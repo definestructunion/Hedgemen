@@ -10,7 +10,7 @@ namespace Hgm.Engine.Assets
 	public class AssetManifest
 	{
 		[JsonProperty("namespace")]
-		private string ns = ResourceLocation.EmptyNamespace;
+		private string ns = ResourceName.EmptyNamespace;
 		
 		public string Namespace => ns;
 		
@@ -22,9 +22,9 @@ namespace Hgm.Engine.Assets
 			
 		}
 
-		public List<ResourceLocation> AsResourceLocations()
+		public List<ResourceName> AsResourceLocations()
 		{
-			return values.Select(keyValuePair => new ResourceLocation(ns, keyValuePair.Key)).ToList();
+			return values.Select(keyValuePair => new ResourceName(ns, keyValuePair.Key)).ToList();
 		}
 
 		public List<FileHandle> AsFileHandles(DirectoryHandle modDirectory)
@@ -36,7 +36,7 @@ namespace Hgm.Engine.Assets
 		{
 			return values.Select(keyValuePair =>
 			{
-				var resourceLocation = new ResourceLocation(ns, keyValuePair.Key);
+				var resourceLocation = new ResourceName(ns, keyValuePair.Key);
 				var file = new FileHandle(modDirectory.FullName + "/" + keyValuePair.Value);
 				return new AssetLoadPass(resourceLocation, file);
 			}).ToList();
@@ -46,7 +46,7 @@ namespace Hgm.Engine.Assets
 		{
 			return values.Select(keyValuePair =>
 			{
-				var resourceLocation = new ResourceLocation(ns, keyValuePair.Key);
+				var resourceLocation = new ResourceName(ns, keyValuePair.Key);
 				var file = new FileHandle(keyValuePair.Value);
 				return new AssetLoadPass(resourceLocation, file);
 			}).ToList();

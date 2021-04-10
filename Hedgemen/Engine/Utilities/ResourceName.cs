@@ -4,9 +4,9 @@ using Newtonsoft.Json;
 namespace Hgm.Engine.Utilities
 {
 	[Serializable]
-	public struct ResourceLocation
+	public struct ResourceName
 	{
-		public static ResourceLocation Empty => new ResourceLocation(EmptyNamespace, EmptyName);
+		public static ResourceName Empty => new ResourceName(EmptyNamespace, EmptyName);
 
 		public static string EmptyNamespace => "any";
 
@@ -38,14 +38,14 @@ namespace Hgm.Engine.Utilities
 			set => name = value;
 		}
 
-		public ResourceLocation(string resourceNamespace, string name)
+		public ResourceName(string resourceNamespace, string name)
 		{
 			ns = resourceNamespace;
 			this.name = name;
 		}
 
 		[JsonConstructor]
-		public ResourceLocation(string resource)
+		public ResourceName(string resource)
 		{
 			if (resource == null)
 			{
@@ -77,16 +77,16 @@ namespace Hgm.Engine.Utilities
 			return FullName;
 		}
 
-		public ResourceLocation ToGeneric()
+		public ResourceName ToGeneric()
 		{
-			return new ResourceLocation(EmptyNamespace, Name);
+			return new ResourceName(EmptyNamespace, Name);
 		}
 
 		public override bool Equals(object obj)
 		{
 			if (obj == null) return false;
 
-			ResourceLocation resource = (ResourceLocation) obj;
+			ResourceName resource = (ResourceName) obj;
 			return FullName.Equals(resource.FullName);
 		}
 
@@ -95,8 +95,8 @@ namespace Hgm.Engine.Utilities
 			return base.GetHashCode();
 		}
 
-		public static implicit operator ResourceLocation(string str) => new ResourceLocation(str);
+		public static implicit operator ResourceName(string str) => new ResourceName(str);
 
-		public static implicit operator string(ResourceLocation resource) => resource.FullName;
+		public static implicit operator string(ResourceName resource) => resource.FullName;
 	}
 }

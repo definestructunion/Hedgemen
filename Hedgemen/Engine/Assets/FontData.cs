@@ -4,20 +4,20 @@ namespace Hgm.Engine.Assets
 {
 	public struct FontData
 	{
-		public ResourceLocation RegularResource { get; private set; }
+		public ResourceName RegularResource { get; private set; }
 		
-		public ResourceLocation BoldResource { get; private set; }
+		public ResourceName BoldResource { get; private set; }
 		
-		public ResourceLocation ItalicsResource { get; private set; }
+		public ResourceName ItalicsResource { get; private set; }
 		
-		public FontData(ResourceLocation regularResource, ResourceLocation boldResource, ResourceLocation italicsResource)
+		public FontData(ResourceName regularResource, ResourceName boldResource, ResourceName italicsResource)
 		{
 			RegularResource = regularResource;
 			BoldResource = boldResource;
 			ItalicsResource = italicsResource;
 		}
 		
-		public ResourceLocation FromFontStyle(FontStyle fontStyle)
+		public ResourceName FromFontStyle(FontStyle fontStyle)
 		{
 			switch (fontStyle)
 			{
@@ -28,7 +28,7 @@ namespace Hgm.Engine.Assets
 			}
 		}
 		
-		public FontStyle ToFontStyle(ResourceLocation fontResource)
+		public FontStyle ToFontStyle(ResourceName fontResource)
 		{
 			if (fontResource.Equals(RegularResource)) return FontStyle.Regular;
 			if (fontResource.Equals(BoldResource)) return FontStyle.Bold;
@@ -37,7 +37,7 @@ namespace Hgm.Engine.Assets
 			return FontStyle.Regular;
 		}
 
-		public FontData(ResourceLocation resource)
+		public FontData(ResourceName resource)
 		{
 			RegularResource = resource;
 			BoldResource = resource;

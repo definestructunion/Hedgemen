@@ -59,7 +59,6 @@ namespace Hgm
 			Graphics.PreferMultiSampling = false;
 			Graphics.ApplyChanges();
 			
-			Hedgemen.Game = this;
 			spriteBatch = new SpriteBatch(Graphics.GraphicsDevice);
 			assets = new AssetManager(this, Graphics);
 
@@ -101,15 +100,18 @@ namespace Hgm
 				Height = 63
 			});
 
-			var forgeArgs = new HedgemenForgeArgs
+			var hedgemenArgs = new HedgemenArgs
 			{
-				DirectLoadMods = new List<ForgeMod> { new HedgemenMod() },
-				ModPackDirectory = new DirectoryHandle("mods")
+				ForgeArgs = new HedgemenForgeArgs
+				{
+					DirectLoadMods = new List<ForgeMod> {new HedgemenMod()},
+					ModPackDirectory = new DirectoryHandle("mods")
+				},
+
+				Game = this
 			};
 			
-			HedgemenForge forge = new HedgemenForge();
-			
-			forge.ForgeStart(forgeArgs);
+			Hedgemen.HedgemenStart(hedgemenArgs);
 
 			currentScene = new SceneMainMenu();
 			currentScene.Initialize();
