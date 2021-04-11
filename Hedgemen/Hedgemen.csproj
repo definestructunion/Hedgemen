@@ -2,10 +2,17 @@
 
     <PropertyGroup>
         <OutputType>exe</OutputType>
-        <TargetFramework>net5</TargetFramework>
+        <TargetFramework>net5.0</TargetFramework>
         <DefineConstants>XNA_IMPLEMENTATION_FNA</DefineConstants>
         <RootNamespace>Hgm</RootNamespace>
         <AssemblyName>Hedgemen</AssemblyName>
+
+        <Nullable>disable</Nullable>
+
+        <RunWorkingDirectory>../Build/</RunWorkingDirectory>
+        <OutputPath>../Build</OutputPath>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
     </PropertyGroup>
 
     <ItemGroup>
@@ -22,7 +29,10 @@
     </ItemGroup>
 
     <ItemGroup>
-        <None Include="$(SolutionDir)\res\**" CopyToOutputDirectory="PreserveNewest" LinkBase="./" Visible="false" />
+    <ContentWithTargetPath Include="../res/**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>%(RecursiveDir)\%(Filename)%(Extension)</TargetPath>
+    </ContentWithTargetPath>
     </ItemGroup>
     
 </Project>

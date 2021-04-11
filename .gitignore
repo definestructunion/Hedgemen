@@ -1,9 +1,6 @@
 .idea/
-Hedgemen/bin/
+Build/
 Hedgemen/obj/
 
-Hedgemen.API/bin/
-Hedgemen.API/obj/
-
-Thingy/bin/
-Thingy/obj/
+Content/bin/
+Content/obj/

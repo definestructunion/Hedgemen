@@ -41,11 +41,6 @@ namespace Hgm.Engine.Scenes.Nodes
 			drawingSprite = new Sprite(buttonData.GetButton(ButtonState.Regular).Resource);
 		}
 
-		public void FitToTexture()
-		{
-			
-		}
-
 		protected override void DoUpdate(InputState inputState)
 		{
 			base.DoUpdate(inputState);
@@ -62,7 +57,7 @@ namespace Hgm.Engine.Scenes.Nodes
 				Sprite = drawingSprite,
 				DestRect = DrawBounds,
 				Color = Color
-			}, button.FrameWidth * 3, button.FrameHeight * 3, button.FrameWidth, button.FrameHeight);//15, 15, 5, 5);
+			}, button.FrameWidth * 3, button.FrameHeight * 3, button.FrameWidth, button.FrameHeight);
 			// todo dont *3
 			AttachedScene.Renderer.End();
 		}

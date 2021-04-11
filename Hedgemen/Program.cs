@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Hgm.API.Entities;
 using Hgm.API.Modding;
 using Hgm.Content;
 using Hgm.Engine.Assets;
@@ -50,6 +51,9 @@ namespace Hgm
 		
 		protected override void Initialize()
 		{
+			var entity = new UEntity();
+			entity.Add<Inventory>();
+			
 			IsMouseVisible = true;
 			
 			Graphics.PreferredBackBufferWidth = 1920;
@@ -62,6 +66,7 @@ namespace Hgm
 			spriteBatch = new SpriteBatch(Graphics.GraphicsDevice);
 			assets = new AssetManager(this, Graphics);
 
+			Console.WriteLine(new FileHandle("asset_manifest.json").FullName);
 			AssetManifest assetManifest = new FileHandle("asset_manifest.json").ReadString().FromJson<AssetManifest>();
 
 			foreach (var loadPass in assetManifest.AsAssetLoadPasses())
@@ -104,7 +109,7 @@ namespace Hgm
 			{
 				ForgeArgs = new HedgemenForgeArgs
 				{
-					DirectLoadMods = new List<ForgeMod> {new HedgemenMod()},
+					DirectLoadMods = new List<ForgeMod> { new HedgemenMod() },
 					ModPackDirectory = new DirectoryHandle("mods")
 				},
 

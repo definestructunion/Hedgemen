@@ -1,4 +1,4 @@
-﻿namespace Hgm.Engine.GameState
+﻿namespace Hgm.API.Entities
 {
 	public class Inventory : IEntityComponent
 	{

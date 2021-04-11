@@ -7,9 +7,11 @@ namespace Hgm.Engine.Assets
 	{
 		public ResourceName ResourceName;
 		public FileHandle File;
+		public AssetLoadType AssetType;
 		
-		public AssetLoadPass(ResourceName resourceName, FileHandle file)
+		public AssetLoadPass(ResourceName resourceName, FileHandle file, AssetLoadType assetType = AssetLoadType.Default)
 		{
+			AssetType = assetType;
 			ResourceName = resourceName;
 			File = file;
 		}

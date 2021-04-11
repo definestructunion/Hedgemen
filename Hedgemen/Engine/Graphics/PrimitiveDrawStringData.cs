@@ -5,7 +5,7 @@ namespace Hgm.Engine.Graphics
 {
 	public struct PrimitiveDrawStringData
 	{
-		private string? text;
+		private string text;
 		private Font font;
 		private Vector2 position;
 		private Color? color;

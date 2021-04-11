@@ -79,7 +79,8 @@ namespace Hgm.Engine.Scenes.Nodes
 				Color = OutlineColor,
 				Origin = origin,
 				Scale = scale,
-				SpriteEffects = SpriteEffects.None
+				SpriteEffects = SpriteEffects.None,
+				LayerDepth = layer
 			};
 			
 			AttachedScene.Renderer.Begin();
