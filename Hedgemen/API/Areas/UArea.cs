@@ -4,7 +4,7 @@
 	{
 		private IAreaBehaviour behaviour;
 
-		private UAreaMap map;
+		private UCell[,] cells;
 		
 		private UArea()
 		{
@@ -13,7 +13,7 @@
 
 		public UArea(UAreaArgs args)
 		{
-			map = new UAreaMap(args.TypeInfo.Width, args.TypeInfo.Height);
+			cells = new UCell[args.TypeInfo.Width, args.TypeInfo.Height];
 			behaviour = Hedgemen.Libraries.AreaBehaviours[args.TypeInfo.AreaBehaviourName]();
 		}
 	}

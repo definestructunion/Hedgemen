@@ -1,7 +1,7 @@
-﻿namespace Hgm.Engine.GameState
+namespace Hgm.Engine.GameState
 {
-	public interface IGameComponent<T>
-	{
-		
-	}
+    public interface IGameComponent
+    {
+        
+    }
 }

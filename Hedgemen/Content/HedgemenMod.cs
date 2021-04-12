@@ -1,4 +1,4 @@
-﻿using Hgm.API.Areas;
+﻿using Hgm.API.Entities;
 using Hgm.API.Modding;
 using Hgm.Engine.IO;
 using Hgm.Engine.Utilities;
@@ -16,7 +16,16 @@ namespace Hgm.Content
 
 		public override void Setup()
 		{
-			
+			Hedgemen.Libraries.EntityTypes.Register(CreateEntityTypeHuman());
+		}
+
+		private UEntityTypeInfo CreateEntityTypeHuman()
+		{
+			return new UEntityTypeInfo
+			{
+				ResourceName = "hedgemen:entities/human",
+				DefaultNames = {"Reynauld", "Dismas", "Xerxes"}
+			};
 		}
 	}
 }

@@ -4,6 +4,7 @@ using System.IO;
 using Hgm.Engine.Utilities;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Hgm.Engine.Assets
 {
@@ -38,6 +39,24 @@ namespace Hgm.Engine.Assets
 		}
 
 		public T Load<T>(AssetLoadPass loadPass)
+		{
+			return (T)LoadAsset(loadPass);
+		}
+
+		private object LoadAsset(AssetLoadPass loadPass)
+		{
+			switch(loadPass.AssetType)
+			{
+				case AssetLoadType.Music: return AssetCreator.CreateSong(this, loadPass.ResourceName, loadPass.File);
+				case AssetLoadType.Texture: return AssetCreator.CreateTexture2D(this, loadPass.ResourceName, loadPass.File);
+				case AssetLoadType.Sound: return AssetCreator.CreateSoundEffect(this, loadPass.ResourceName, loadPass.File);
+				case AssetLoadType.Effect: return LoadDefault<Effect>(loadPass);
+				case AssetLoadType.Font: return LoadDefault<SpriteFont>(loadPass);
+				default: return LoadDefault<object>(loadPass);
+			}
+		}
+
+		private T LoadDefault<T>(AssetLoadPass loadPass)
 		{
 			if (assets.ContainsKey(loadPass.ResourceName))
 				return (T)assets[loadPass.ResourceName];

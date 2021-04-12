@@ -1,30 +1,37 @@
 ﻿using System;
-using System.Collections.Generic;
 using Hgm.Engine.GameState;
-using Hgm.Engine.Utilities;
 
 namespace Hgm.API.Entities
 {
-	public class UEntity : IGameObject<UEntity, IEntityComponent>
+	public class UEntity : IGameObject
 	{
-		private Dictionary<Type, IEntityComponent> components = new ();
+		public GameProperties Properties => properties;
 
-		public UEntity()
+		public EntitySheet Sheet => sheet;
+		
+		private IEntityBehaviour behaviour;
+
+		/// <summary>
+		/// Should only be called for serialization and activation
+		/// </summary>
+		private UEntity()
 		{
 			
 		}
-		
-		public TK Get<TK>() where TK : IEntityComponent
+
+		public UEntity(UEntityArgs args)
 		{
-			return (TK) components.Get(typeof(TK));
+			var rng = new Random();
+			behaviour = Hedgemen.Libraries.EntityBehaviours[args.TypeInfo.EntityBehaviourName]();
+			Sheet.EntityName = args.TypeInfo.DefaultNames[rng.Next(0, args.TypeInfo.DefaultNames.Count)];
 		}
 
-		public TK Add<TK>() where TK : IEntityComponent, new()
-		{
-			if (components.ContainsKey(typeof(TK))) return default;
-			var component = new TK();
-			components.Add(typeof(TK), component);
-			return component;
-		}
+		private GameProperties properties = new();
+		private EntitySheet sheet = new();
+	}
+
+	public struct UEntityArgs
+	{
+		public UEntityTypeInfo TypeInfo;
 	}
 }

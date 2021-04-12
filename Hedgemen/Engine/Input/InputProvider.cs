@@ -17,6 +17,8 @@ namespace Hgm.Input
 		private MouseState previousButtons;
 
 		private Vector2 cursorPosition;
+
+		private bool shouldClearTypedChars = false;
 		
 		public InputProvider()
 		{
@@ -37,6 +39,12 @@ namespace Hgm.Input
 		
 		public void Update(GameTime gameTime, Matrix scaleMatrix)
 		{
+			if(shouldClearTypedChars)
+			{
+				typedChars.Clear();
+				shouldClearTypedChars = false;
+			}
+
 			previousKeys = currentKeys;
 			currentKeys = Keyboard.GetState();
 
@@ -51,7 +59,7 @@ namespace Hgm.Input
 		public string GetTypedChars()
 		{
 			string chars = typedChars.ToString();
-			typedChars.Clear();
+			shouldClearTypedChars = true;
 			return chars;
 		}
 

@@ -51,9 +51,12 @@ namespace Hgm
 		
 		protected override void Initialize()
 		{
-			var entity = new UEntity();
-			entity.Add<Inventory>();
+			var entity = new UEntity(default);
+			entity.Sheet.EntityName = "Jeremus";
+			entity.Properties.Add("hedgemen:last_name", new PropertyLastName{ Name = "Jeremusson"});
 			
+			Console.WriteLine(entity.Sheet.EntityName + " " + entity.Properties.Get<PropertyLastName>("hedgemen:last_name").Name);
+
 			IsMouseVisible = true;
 			
 			Graphics.PreferredBackBufferWidth = 1920;

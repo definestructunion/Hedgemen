@@ -1,17 +1,54 @@
 {
     "namespace": "hedgemen",
 
-    "assets": {
-        
-        "music/main_menu": "main_menu_music.xnb",
-        "textures/main_menu_background": "main_menu_background.xnb",
-        
-        "ui/font_regular": "pixelade_regular.xnb",
-        "ui/font_bold": "pixelade_bold.xnb",
-        "ui/font_italics": "pixelade_italics.xnb",
+    "assets": [
 
-        "ui/button_regular": "button_regular.xnb",
-        "ui/button_hover": "button_hover.xnb",
-        "ui/button_down": "button_down.xnb"
-    }
+        {
+            "resource_name": "music/main_menu",
+            "file": "main_menu_music.ogg",
+            "file_type": "music"
+        },
+
+        {
+            "resource_name": "textures/main_menu_background",
+            "file": "main_menu_background.png",
+            "file_type": "texture"
+        },
+
+        {
+            "resource_name": "ui/font_regular",
+            "file": "pixelade_regular.xnb",
+            "file_type": "font"
+        },
+
+        {
+            "resource_name": "ui/font_bold",
+            "file": "pixelade_bold.xnb",
+            "file_type": "font"
+        },
+
+        {
+            "resource_name": "ui/font_italics",
+            "file": "pixelade_italics.xnb",
+            "file_type": "font"
+        },
+
+        {
+            "resource_name": "ui/button_regular",
+            "file": "button_regular.png",
+            "file_type": "texture"
+        },
+
+        {
+            "resource_name": "ui/button_hover",
+            "file": "button_hover.png",
+            "file_type": "texture"
+        },
+
+        {
+            "resource_name": "ui/button_down",
+            "file": "button_down.png",
+            "file_type": "texture"
+        }
+    ]
 }
