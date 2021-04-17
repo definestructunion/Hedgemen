@@ -4,10 +4,20 @@ using Hgm.Engine.Utilities;
 
 namespace Hgm.API.Entities
 {
-    public class UEntityTypeInfo : UTypeInfo
-    {
-        public ResourceName EntityBehaviourName = ResourceName.Empty;
+	public class UEntityTypeInfo : UTypeInfoCreatable<UEntity, UEntityArgs>
+	{
+		public List<string> Names = new ();
 
-        public List<string> DefaultNames = new ();
-    }
+		public ResourceName EntityBehaviourName = ResourceName.Empty;
+		
+		public override UEntity Create(UEntityArgs args)
+		{
+			args.TypeInfo = this;
+			return new UEntity(args);
+		}
+
+		public string GetName() => Names[Hedgemen.Rng.EntityRng.Next(0, Names.Count)];
+
+		public IEntityBehaviour GetBehaviour() => Hedgemen.Libraries.EntityBehaviours[EntityBehaviourName]();
+	}
 }

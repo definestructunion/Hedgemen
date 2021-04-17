@@ -56,7 +56,7 @@ namespace Hgm.Engine.Graphics
 			if (!isUnsafe) return;
 			this.resourceName = ResourceName.Empty;
 			texture.Dispose();
-			isUnsafe = true;
+			isUnsafe = false;
 		}
 	}
 }

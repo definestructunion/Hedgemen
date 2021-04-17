@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Hgm.API.Areas;
 using Hgm.API.Entities;
 using Hgm.API.Modding;
 using Hgm.Content;
@@ -8,6 +9,7 @@ using Hgm.Engine.Graphics;
 using Hgm.Engine.IO;
 using Hgm.Engine.Scenes;
 using Hgm.Engine.Utilities;
+using Maths;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Media;
@@ -51,12 +53,6 @@ namespace Hgm
 		
 		protected override void Initialize()
 		{
-			var entity = new UEntity(default);
-			entity.Sheet.EntityName = "Jeremus";
-			entity.Properties.Add("hedgemen:last_name", new PropertyLastName{ Name = "Jeremusson"});
-			
-			Console.WriteLine(entity.Sheet.EntityName + " " + entity.Properties.Get<PropertyLastName>("hedgemen:last_name").Name);
-
 			IsMouseVisible = true;
 			
 			Graphics.PreferredBackBufferWidth = 1920;
@@ -123,6 +119,26 @@ namespace Hgm
 
 			currentScene = new SceneMainMenu();
 			currentScene.Initialize();
+
+			var areaArgs = new UAreaArgs
+			{
+				TypeInfo = HedgemenMod.AreaOverworld
+			};
+			
+			var area = areaArgs.TypeInfo.Create(areaArgs);
+			Console.WriteLine(area.Name);
+			
+			var entityArgs = new UEntityArgs
+			{
+				TypeInfo = Hedgemen.Libraries.EntityTypes["hedgemen:entities/human_archer"]
+			};
+			
+			area.Generate();
+
+			var entity = entityArgs.TypeInfo.Create(entityArgs);
+			Console.WriteLine(entity.Name);
+			
+			Console.WriteLine(area.AreaMap.GetCellAt(new MapPos(0, 0)).GetType());
 
 			base.Initialize();
 		}

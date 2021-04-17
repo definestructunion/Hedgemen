@@ -1,19 +1,13 @@
-﻿using System;
-using Hgm.Engine.GameState;
-
-namespace Hgm.API.Entities
+﻿namespace Hgm.API.Entities
 {
-	public class UEntity : IGameObject
+	public sealed class UEntity
 	{
-		public GameProperties Properties => properties;
-
-		public EntitySheet Sheet => sheet;
-		
 		private IEntityBehaviour behaviour;
+		
+		public UEntityTypeInfo TypeInfo { get; private set; }
 
-		/// <summary>
-		/// Should only be called for serialization and activation
-		/// </summary>
+		public string Name { get; private set; } = "Unnamed";
+		
 		private UEntity()
 		{
 			
@@ -21,13 +15,9 @@ namespace Hgm.API.Entities
 
 		public UEntity(UEntityArgs args)
 		{
-			var rng = new Random();
-			behaviour = Hedgemen.Libraries.EntityBehaviours[args.TypeInfo.EntityBehaviourName]();
-			Sheet.EntityName = args.TypeInfo.DefaultNames[rng.Next(0, args.TypeInfo.DefaultNames.Count)];
+			TypeInfo = args.TypeInfo;
+			Name = TypeInfo.GetName();
 		}
-
-		private GameProperties properties = new();
-		private EntitySheet sheet = new();
 	}
 
 	public struct UEntityArgs

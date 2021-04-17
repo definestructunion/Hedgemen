@@ -34,5 +34,11 @@
       <TargetPath>%(RecursiveDir)\%(Filename)%(Extension)</TargetPath>
     </ContentWithTargetPath>
     </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="API\Areas\Civic" />
+      <Folder Include="API\Areas\Dungeon" />
+      <Folder Include="Content\Entities" />
+    </ItemGroup>
     
 </Project>

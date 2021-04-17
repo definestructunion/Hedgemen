@@ -10,11 +10,11 @@ namespace Hgm.API.Modding
 	{
 		private Dictionary<ResourceName, T> items = new ();
 
-		public string LibraryName { get; set; } = string.Empty;
+		private T defaultValue = default;
 		
-		public ForgeLibrary(string libraryName)
+		public ForgeLibrary(T defaultValue)
 		{
-			LibraryName = libraryName;
+			this.defaultValue = defaultValue;
 		}
 
 		public void Register(T item)
@@ -28,8 +28,15 @@ namespace Hgm.API.Modding
 			if (!items.ContainsKey(resource)) return;
 			items.Remove(resource);
 		}
-		
-		public T this[ResourceName resource] => items.Get(resource);
+
+		public T this[ResourceName resource]
+		{
+			get
+			{
+				if (!items.ContainsKey(resource)) return defaultValue;
+				return items.Get(resource);
+			}
+		}
 
 		public IReadOnlyList<T> Entries => items.Values.ToList();
 
@@ -51,11 +58,11 @@ namespace Hgm.API.Modding
 	{
 		private Dictionary<T, TK> items = new ();
 
-		public string LibraryName { get; set; } = string.Empty;
+		private TK defaultValue;
 		
-		public ForgeLibrary(string libraryName)
+		public ForgeLibrary(TK defaultValue)
 		{
-			LibraryName = libraryName;
+			this.defaultValue = defaultValue;
 		}
 
 		public void Register(T resourceName, TK item)
@@ -70,7 +77,14 @@ namespace Hgm.API.Modding
 			items.Remove(resource);
 		}
 		
-		public TK this[T resource] => items.Get(resource);
+		public TK this[T resource]
+		{
+			get
+			{
+				if (!items.ContainsKey(resource)) return defaultValue;
+				return items.Get(resource);
+			}
+		}
 
 		public IReadOnlyList<TK> Entries => items.Values.ToList();
 

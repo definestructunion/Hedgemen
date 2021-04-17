@@ -1,0 +1,38 @@
+{
+    "schema_version": 1,
+
+    "namespace": "hedgemen",
+
+    "version": "0.0.1",
+
+    "name": "Hedgemen",
+
+    "description": "Base content for Hedgemen",
+
+    "authors": [
+        "definestructunion"
+    ],
+
+    "contact": {
+        "homepage": "https://hedgemen.com",
+        "source": "https://github.com/definestructunion/Hedgemen"
+    },
+
+    "depends": {
+        "mods": [
+            
+        ],
+
+        "incompatible_mods": [
+            
+        ],
+
+        "dlls": [
+            
+        ],
+
+        "hedgemen": "0.0.1"
+    },
+
+    "mod_main": "Hgm.Content.HedgemenMod"
+}

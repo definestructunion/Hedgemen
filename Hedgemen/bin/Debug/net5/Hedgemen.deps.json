@@ -1,0 +1,108 @@
+{
+  "runtimeTarget": {
+    "name": "net5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    "net5.0": {
+      "Hedgemen/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3",
+          "FNA": "1.0.0.0",
+          "SpriteFontPlus.FNA": "0.9.2.0"
+        },
+        "runtime": {
+          "Hedgemen.dll": {}
+        }
+      },
+      "Newtonsoft.Json/12.0.3": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.3.23909"
+          }
+        }
+      },
+      "FNA/1.0.0.0": {
+        "runtime": {
+          "FNA.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "SpriteFontPlus.FNA/0.9.2.0": {
+        "runtime": {
+          "SpriteFontPlus.FNA.dll": {
+            "assemblyVersion": "0.9.2.0",
+            "fileVersion": "0.9.2.0"
+          }
+        }
+      },
+      "Cyotek.Drawing.BitmapFont/1.0.0.0": {
+        "runtime": {
+          "Cyotek.Drawing.BitmapFont.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "2.0.1.0"
+          }
+        }
+      },
+      "StbImageSharp/2.22.4.0": {
+        "runtime": {
+          "StbImageSharp.dll": {
+            "assemblyVersion": "2.22.4.0",
+            "fileVersion": "2.22.4.0"
+          }
+        }
+      },
+      "StbTrueTypeSharp/1.24.7.0": {
+        "runtime": {
+          "StbTrueTypeSharp.dll": {
+            "assemblyVersion": "1.24.7.0",
+            "fileVersion": "1.24.7.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Hedgemen/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Newtonsoft.Json/12.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "path": "newtonsoft.json/12.0.3",
+      "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
+    },
+    "FNA/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SpriteFontPlus.FNA/0.9.2.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Cyotek.Drawing.BitmapFont/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StbImageSharp/2.22.4.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StbTrueTypeSharp/1.24.7.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

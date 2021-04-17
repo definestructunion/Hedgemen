@@ -1,19 +1,30 @@
 ﻿using Hgm.API.Resources;
 using Hgm.Engine.Utilities;
-using Newtonsoft.Json;
 
 namespace Hgm.API.Areas
 {
-	public sealed class UAreaTypeInfo : UTypeInfo
+	public class UAreaTypeInfo : UTypeInfoCreatable<UArea, UAreaArgs>
 	{
-		public ResourceName AreaBehaviourName;
+		public string Name = string.Empty;
 
-		public ResourceName AreaMapName;
+		public ResourceName AreaBehaviourName = ResourceName.Empty;
+		
+		public ResourceName AreaCartographerName = ResourceName.Empty;
 
-		public string Name;
+		public int Width = 512;
 
-		public int Width;
+		public int Height = 512;
+		
+		public override UArea Create(UAreaArgs args)
+		{
+			args.TypeInfo = this;
+			return new UArea(args);
+		}
+		
+		public string GetName() => Name;
 
-		public int Height;
+		public IAreaBehaviour GetBehaviour() => Hedgemen.Libraries.AreaBehaviours[AreaBehaviourName]();
+
+		public UCartographer GetCartographer() => Hedgemen.Libraries.Cartographers[AreaCartographerName];
 	}
 }

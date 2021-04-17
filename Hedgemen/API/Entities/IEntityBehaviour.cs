@@ -1,7 +1,7 @@
-namespace Hgm.API.Entities
+﻿namespace Hgm.API.Entities
 {
-    public interface IEntityBehaviour : IBehaviour
-    {
-        
-    }
+	public interface IEntityBehaviour : IBehaviour
+	{
+		
+	}
 }

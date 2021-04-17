@@ -1,8 +1,6 @@
-﻿using Hgm.API.Resources;
-
-namespace Hgm.API
+﻿namespace Hgm.API
 {
-	public interface IBehaviour : IResource
+	public interface IBehaviour
 	{
 		
 	}

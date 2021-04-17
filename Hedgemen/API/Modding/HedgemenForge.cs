@@ -27,6 +27,15 @@ namespace Hgm.API.Modding
 			var modFolders = ModPack.ListMods();
 			ForgeLoadDirectMods(args);
 			ForgeLoadMods(args, modFolders);
+			ForgeSetupMods();
+		}
+
+		private void ForgeSetupMods()
+		{
+			foreach(var mod in mods.Values)
+			{
+				mod.Setup();
+			}
 		}
 
 		private void ForgeLoadDirectMods(HedgemenForgeArgs args)
