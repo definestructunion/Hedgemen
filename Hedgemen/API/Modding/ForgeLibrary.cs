@@ -31,11 +31,13 @@ namespace Hgm.API.Modding
 
 		public T this[ResourceName resource]
 		{
-			get
-			{
-				if (!items.ContainsKey(resource)) return defaultValue;
-				return items.Get(resource);
-			}
+			get => Get(resource);
+		}
+
+		public T Get(ResourceName resource)
+		{
+			if (!items.ContainsKey(resource)) return defaultValue;
+			return items.Get(resource);
 		}
 
 		public IReadOnlyList<T> Entries => items.Values.ToList();

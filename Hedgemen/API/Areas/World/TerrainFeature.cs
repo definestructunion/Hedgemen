@@ -1,7 +1,7 @@
 ﻿namespace Hgm.API.Areas.World
 {
-	public class TerrainFeature
-	{
-		
-	}
+    public class TerrainFeature
+    {
+        
+    }
 }

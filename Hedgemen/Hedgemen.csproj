@@ -36,9 +36,10 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="API\Areas\Civic" />
-      <Folder Include="API\Areas\Dungeon" />
-      <Folder Include="Content\Entities" />
+      <Compile Remove="API\Areas\AreaImplementation.cs" />
+      <Compile Remove="API\Areas\ICell.cs" />
+      <Compile Remove="API\Areas\World\CellWorld.cs" />
+      <Compile Remove="API\AreaImplementation.cs" />
     </ItemGroup>
     
 </Project>

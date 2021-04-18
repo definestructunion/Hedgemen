@@ -127,10 +127,10 @@ namespace Hgm
 			
 			var area = areaArgs.TypeInfo.Create(areaArgs);
 			Console.WriteLine(area.Name);
-			
+
 			var entityArgs = new UEntityArgs
 			{
-				TypeInfo = Hedgemen.Libraries.EntityTypes["hedgemen:entities/human_archer"]
+				TypeInfo = Hedgemen.Libraries.EntityTypes.Get("hedgemen:entities/human_archer")
 			};
 			
 			area.Generate();
@@ -138,7 +138,7 @@ namespace Hgm
 			var entity = entityArgs.TypeInfo.Create(entityArgs);
 			Console.WriteLine(entity.Name);
 			
-			Console.WriteLine(area.AreaMap.GetCellAt(new MapPos(0, 0)).GetType());
+			Console.WriteLine(area.AreaMap.GetCellAt(new MapPos(0, 0)));
 
 			base.Initialize();
 		}

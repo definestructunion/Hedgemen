@@ -14,6 +14,13 @@ namespace Hgm.Content.Landscapers
 				{
 					var pos = new MapPos(x, y);
 					var cell = new UCell(pos);
+					cell.CellInfo = new CellInfoWorld();
+					if (cell.CellInfo is CellInfoWorld cellInfoWorld)
+					{
+						cellInfoWorld.Terrain = new Terrain();
+						cellInfoWorld.TerrainFeature = new TerrainFeature();
+						cellInfoWorld.Biome = new Biome();
+					}
 					area.AreaMap.SetCellAt(pos, cell);
 				}
 			}

@@ -9,10 +9,8 @@ namespace Hgm.API.Areas
 
 		public GameProperties Properties { get; private set; } = new();
 
-		public AreaNatureInfo NatureInfo { get; private set; } = new();
+		public CellInfo CellInfo { get; set; } = new();
 
-		public AreaCrawlerInfo CrawlerInfo { get; private set; } = new();
-		
 		public UCell(MapPos pos)
 		{
 			Position = pos;

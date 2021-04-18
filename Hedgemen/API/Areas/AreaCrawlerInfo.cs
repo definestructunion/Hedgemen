@@ -1,6 +1,6 @@
 ﻿namespace Hgm.API.Areas
 {
-	public class AreaCrawlerInfo
+	public class AreaCrawlerInfo : CellInfo
 	{
 		
 	}

@@ -47,13 +47,16 @@ namespace Hgm.Engine.Assets
 		{
 			switch(loadPass.AssetType)
 			{
+				case AssetLoadType.Xnb: return LoadDefault<object>(loadPass);
 				case AssetLoadType.Music: return AssetCreator.CreateSong(this, loadPass.ResourceName, loadPass.File);
 				case AssetLoadType.Texture: return AssetCreator.CreateTexture2D(this, loadPass.ResourceName, loadPass.File);
 				case AssetLoadType.Sound: return AssetCreator.CreateSoundEffect(this, loadPass.ResourceName, loadPass.File);
 				case AssetLoadType.Effect: return LoadDefault<Effect>(loadPass);
 				case AssetLoadType.Font: return LoadDefault<SpriteFont>(loadPass);
-				default: return LoadDefault<object>(loadPass);
 			}
+
+			Console.WriteLine("Asset type: " + loadPass.AssetType + " is not supported by this Asset Manager, returning null!");
+			return null;
 		}
 
 		private T LoadDefault<T>(AssetLoadPass loadPass)
