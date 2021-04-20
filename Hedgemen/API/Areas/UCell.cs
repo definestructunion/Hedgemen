@@ -7,9 +7,9 @@ namespace Hgm.API.Areas
 	{
 		public MapPos Position { get; private set; }
 
-		public GameProperties Properties { get; private set; } = new();
+		public CellEnvironmentInfo EnvironmentInfo { get; set; } = new CellEnvironmentInfo();
 
-		public CellInfo CellInfo { get; set; } = new();
+		public CellSector Sector { get; set; } = new();
 
 		public UCell(MapPos pos)
 		{

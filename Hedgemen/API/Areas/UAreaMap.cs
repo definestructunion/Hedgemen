@@ -13,6 +13,14 @@ namespace Hgm.API.Areas
 		public UAreaMap(int width, int height)
 		{
 			cells = new UCell[width, height];
+			for(int y = 0; y < Height; ++y)
+			{
+				for(int x = 0; x < Width; ++x)
+				{
+					var pos = new MapPos(x, y);
+					SetCellAt(pos, new UCell(pos));
+				}
+			}
 		}
 
 		public UCell GetCellAt(MapPos pos)

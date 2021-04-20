@@ -6,6 +6,8 @@
         <DefineConstants>XNA_IMPLEMENTATION_FNA</DefineConstants>
         <RootNamespace>Hgm</RootNamespace>
         <AssemblyName>Hedgemen</AssemblyName>
+        <Platforms>AnyCPU</Platforms>
+        <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
 
         <Nullable>disable</Nullable>
 

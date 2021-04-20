@@ -4,6 +4,7 @@ using Hgm.API.Areas;
 using Hgm.API.Entities;
 using Hgm.API.Modding;
 using Hgm.Content;
+using Hgm.Content.Items;
 using Hgm.Engine.Assets;
 using Hgm.Engine.Graphics;
 using Hgm.Engine.IO;
@@ -139,6 +140,9 @@ namespace Hgm
 			Console.WriteLine(entity.Name);
 			
 			Console.WriteLine(area.AreaMap.GetCellAt(new MapPos(0, 0)));
+
+			var cell = area.AreaMap.GetCellAt(new MapPos(0, 0));
+			cell.Sector.GetRegion(0).Item = new RegionItemChest();
 
 			base.Initialize();
 		}

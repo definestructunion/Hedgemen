@@ -1,6 +1,6 @@
 namespace Hgm.API.Areas
 {
-    public class AreaCivilInfo : CellInfo
+    public class AreaCivilInfo : CellEnvironmentInfo
     {
         
     }

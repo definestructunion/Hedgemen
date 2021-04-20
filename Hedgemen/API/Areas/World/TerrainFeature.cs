@@ -1,6 +1,6 @@
 ﻿namespace Hgm.API.Areas.World
 {
-    public class TerrainFeature
+    public abstract class TerrainFeature
     {
         
     }
