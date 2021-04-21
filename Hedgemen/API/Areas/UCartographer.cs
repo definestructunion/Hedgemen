@@ -14,7 +14,7 @@ namespace Hgm.API.Areas
 
 			foreach (var landscaperName in LandscaperNames)
 			{
-				landscapers.Add(Hedgemen.Libraries.Landscapers[landscaperName]());
+				landscapers.Add(Hedgemen.Libraries.Landscapers.Get(landscaperName)());
 			}
 
 			foreach (var landscaper in landscapers)

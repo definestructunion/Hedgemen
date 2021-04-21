@@ -9,6 +9,5 @@ namespace Hgm
 		public GraphicsDeviceManager Graphics { get; }
 		public AssetManager Assets { get; }
 		public ResourcePack ResourcePack { get; }
-		public void Exit();
 	}
 }

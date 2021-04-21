@@ -29,13 +29,12 @@ namespace Hgm.API.Modding
 			items.Remove(resource);
 		}
 
-		public T this[ResourceName resource]
+		public T this[ResourceName resource] => Get(resource);
+
+		public T Get(ResourceName resource)
 		{
-			get
-			{
-				if (!items.ContainsKey(resource)) return defaultValue;
+			if (!items.ContainsKey(resource)) return defaultValue;
 				return items.Get(resource);
-			}
 		}
 
 		public IReadOnlyList<T> Entries => items.Values.ToList();
@@ -77,13 +76,12 @@ namespace Hgm.API.Modding
 			items.Remove(resource);
 		}
 		
-		public TK this[T resource]
+		public TK this[T resource] => Get(resource);
+
+		public TK Get(T resource)
 		{
-			get
-			{
-				if (!items.ContainsKey(resource)) return defaultValue;
+			if (!items.ContainsKey(resource)) return defaultValue;
 				return items.Get(resource);
-			}
 		}
 
 		public IReadOnlyList<TK> Entries => items.Values.ToList();
