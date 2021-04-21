@@ -4,8 +4,8 @@ namespace Hgm.Engine.Assets
 {
     public enum AssetLoadType
     {
-        [EnumMember(Value = "default")]
-        Default,
+        [EnumMember(Value = "xnb")]
+        Xnb,
         [EnumMember(Value = "music")]
         Music,
         [EnumMember(Value = "texture")]

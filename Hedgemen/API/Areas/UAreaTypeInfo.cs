@@ -15,6 +15,8 @@ namespace Hgm.API.Areas
 
 		public int Height = 512;
 		
+		public bool Wraps = false;
+
 		public override UArea Create(UAreaArgs args)
 		{
 			args.TypeInfo = this;

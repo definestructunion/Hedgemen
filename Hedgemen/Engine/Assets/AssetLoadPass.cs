@@ -9,7 +9,7 @@ namespace Hgm.Engine.Assets
 		public FileHandle File;
 		public AssetLoadType AssetType;
 		
-		public AssetLoadPass(ResourceName resourceName, FileHandle file, AssetLoadType assetType = AssetLoadType.Default)
+		public AssetLoadPass(ResourceName resourceName, FileHandle file, AssetLoadType assetType = AssetLoadType.Xnb)
 		{
 			AssetType = assetType;
 			ResourceName = resourceName;

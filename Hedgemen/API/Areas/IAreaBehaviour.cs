@@ -6,7 +6,7 @@
 
 		public void Initialize(UArea self);
 
-		public void OnGenerate()
+		public void OnCartographerGenerate()
 		{
 			
 		}

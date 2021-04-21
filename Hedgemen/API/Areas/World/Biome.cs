@@ -1,7 +1,7 @@
 ﻿namespace Hgm.API.Areas.World
 {
-	public class Biome
-	{
-		
-	}
+    public abstract class Biome
+    {
+        
+    }
 }

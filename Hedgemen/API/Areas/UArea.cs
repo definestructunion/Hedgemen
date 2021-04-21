@@ -10,9 +10,9 @@ namespace Hgm.API.Areas
 
 		public GameProperties Properties => properties;
 
-		public string Name { get; set; } = string.Empty;
-		
 		public UAreaTypeInfo TypeInfo { get; private set; }
+
+		public string Name => TypeInfo.Name;
 		
 		public UAreaMap AreaMap { get; private set; }
 
@@ -23,14 +23,13 @@ namespace Hgm.API.Areas
 			TypeInfo = args.TypeInfo;
 			behaviour = TypeInfo.GetBehaviour();
 			cartographer = TypeInfo.GetCartographer();
-			Name = TypeInfo.Name;
 			AreaMap = new UAreaMap(TypeInfo.Width, TypeInfo.Height);
 		}
 
 		public void Generate()
 		{
 			cartographer.Generate(this);
-			behaviour.OnGenerate();
+			behaviour.OnCartographerGenerate();
 		}
 	}
 

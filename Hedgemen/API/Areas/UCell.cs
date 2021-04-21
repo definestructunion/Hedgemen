@@ -7,12 +7,10 @@ namespace Hgm.API.Areas
 	{
 		public MapPos Position { get; private set; }
 
-		public GameProperties Properties { get; private set; } = new();
+		public CellEnvironmentInfo EnvironmentInfo { get; set; } = new CellEnvironmentInfo();
 
-		public AreaNatureInfo NatureInfo { get; private set; } = new();
+		public CellSector Sector { get; set; } = new();
 
-		public AreaCrawlerInfo CrawlerInfo { get; private set; } = new();
-		
 		public UCell(MapPos pos)
 		{
 			Position = pos;

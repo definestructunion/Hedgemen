@@ -13,9 +13,6 @@ namespace Hgm.Engine.Assets
 		private string ns = ResourceName.EmptyNamespace;
 		
 		public string Namespace => ns;
-		
-		//[JsonProperty("assets")]
-		//private Dictionary<string, string> values = new Dictionary<string, string>();
 
 		[JsonProperty("assets")]
 		private List<AssetManifestEntry> entries = new();
@@ -54,35 +51,5 @@ namespace Hgm.Engine.Assets
 				return new AssetLoadPass(resourceLocation, file, entry.FileType);
 			}).ToList();
 		}
-
-		/*public List<ResourceName> AsResourceLocations()
-		{
-			return values.Select(keyValuePair => new ResourceName(ns, keyValuePair.Key)).ToList();
-		}
-
-		public List<FileHandle> AsFileHandles(DirectoryHandle modDirectory)
-		{
-			return values.Select(keyValuePair => new FileHandle(modDirectory.FullName + "/" + keyValuePair.Value)).ToList();
-		}
-
-		public List<AssetLoadPass> AsAssetLoadPasses(DirectoryHandle modDirectory)
-		{
-			return values.Select(keyValuePair =>
-			{
-				var resourceLocation = new ResourceName(ns, keyValuePair.Key);
-				var file = new FileHandle(modDirectory.FullName + "/" + keyValuePair.Value);
-				return new AssetLoadPass(resourceLocation, file);
-			}).ToList();
-		}
-		
-		public List<AssetLoadPass> AsAssetLoadPasses()
-		{
-			return values.Select(keyValuePair =>
-			{
-				var resourceLocation = new ResourceName(ns, keyValuePair.Key);
-				var file = new FileHandle(keyValuePair.Value);
-				return new AssetLoadPass(resourceLocation, file);
-			}).ToList();
-		}*/
 	}
 }
