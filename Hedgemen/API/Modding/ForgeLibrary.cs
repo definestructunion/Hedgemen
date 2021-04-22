@@ -29,8 +29,6 @@ namespace Hgm.API.Modding
 			items.Remove(resource);
 		}
 
-		public T this[ResourceName resource] => Get(resource);
-
 		public T Get(ResourceName resource)
 		{
 			if (!items.ContainsKey(resource)) return defaultValue;
@@ -75,8 +73,6 @@ namespace Hgm.API.Modding
 			if (!items.ContainsKey(resource)) return;
 			items.Remove(resource);
 		}
-		
-		public TK this[T resource] => Get(resource);
 
 		public TK Get(T resource)
 		{

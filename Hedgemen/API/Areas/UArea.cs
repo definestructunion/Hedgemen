@@ -5,10 +5,6 @@ namespace Hgm.API.Areas
 	public sealed class UArea
 	{
 		private IAreaBehaviour behaviour;
-		
-		private GameProperties properties = new();
-
-		public GameProperties Properties => properties;
 
 		public UAreaTypeInfo TypeInfo { get; private set; }
 
@@ -17,7 +13,7 @@ namespace Hgm.API.Areas
 		public UAreaMap AreaMap { get; private set; }
 
 		private UCartographer cartographer;
-		
+
 		public UArea(UAreaArgs args)
 		{
 			TypeInfo = args.TypeInfo;

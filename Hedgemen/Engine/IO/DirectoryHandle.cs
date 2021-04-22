@@ -177,10 +177,10 @@ namespace Hgm.Engine.IO
 
 		private void InternalListFilesRecursively(FileListFilter filter, DirectoryHandle directory, List<FileHandle> files)
 		{
-			directory.ListFiles().ForEach(e =>
+			foreach(var file in directory.ListFiles())
 			{
-				if(filter(e)) files.Add(e);
-			});
+				if(filter(file)) files.Add(file);
+			}
 
 			foreach (var dir in directory.ListDirectories())
 			{

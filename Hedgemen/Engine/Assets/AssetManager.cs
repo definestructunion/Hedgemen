@@ -51,7 +51,7 @@ namespace Hgm.Engine.Assets
 				case AssetLoadType.Music: return AssetCreator.CreateSong(this, loadPass.ResourceName, loadPass.File);
 				case AssetLoadType.Texture: return AssetCreator.CreateTexture2D(this, loadPass.ResourceName, loadPass.File);
 				case AssetLoadType.Sound: return AssetCreator.CreateSoundEffect(this, loadPass.ResourceName, loadPass.File);
-				case AssetLoadType.Effect: return LoadDefault<Effect>(loadPass);
+				case AssetLoadType.Effect: return AssetCreator.CreateEffect(this, loadPass.ResourceName, loadPass.File);
 				case AssetLoadType.Font: return LoadDefault<SpriteFont>(loadPass);
 			}
 
@@ -65,10 +65,10 @@ namespace Hgm.Engine.Assets
 				return (T)assets[loadPass.ResourceName];
 			
 			// hack to avoid ContentLoadException with SongReader.Read with slashes
-			ResourceName indexNameSlashesReplaced = loadPass.ResourceName.FullName.Replace("/", "___").Replace("\\", "___");
-			loadPasses.Add(indexNameSlashesReplaced, loadPass);
+			ResourceName resourceNameSlashesReplaced = loadPass.ResourceName.FullName.Replace("/", "\0\0\0").Replace("\\", "\0\0\0");
+			loadPasses.Add(resourceNameSlashesReplaced, loadPass);
 			
-			var asset = ReadAsset<T>(indexNameSlashesReplaced, null);
+			var asset = ReadAsset<T>(resourceNameSlashesReplaced, null);
 
 			assets.Add(loadPass.ResourceName, asset);
 			

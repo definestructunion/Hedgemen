@@ -157,13 +157,10 @@ namespace Hgm.Engine.Graphics
 
 			for (int i = 0; i < 9; ++i)
 			{
-				Draw(new PrimitiveDrawData
-				{
-					Sprite = data.Sprite,
-					DestRect = destPatches[i],
-					SrcRect = sourcePatches[i],
-					Color = data.Color
-				});
+				data.SrcRect = sourcePatches[i];
+				data.DestRect = destPatches[i];
+
+				Draw(data);
 			}
 		}
 	}

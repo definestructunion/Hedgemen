@@ -84,10 +84,12 @@ namespace Hgm.Engine.Utilities
 
 		public override bool Equals(object obj)
 		{
-			if (obj == null) return false;
+			if(obj is ResourceName value)
+			{
+				return FullName.Equals(value.FullName);
+			}
 
-			ResourceName resource = (ResourceName) obj;
-			return FullName.Equals(resource.FullName);
+			return false;
 		}
 
 		public override int GetHashCode()

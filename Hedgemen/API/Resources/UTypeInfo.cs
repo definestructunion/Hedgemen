@@ -25,5 +25,20 @@ namespace Hgm.API.Resources
 		{
 			
 		}
-	}
+
+        public override bool Equals(object obj)
+        {
+			if(obj is UTypeInfo<T> value)
+			{
+				return ResourceName.Equals(value.ResourceName);
+			}
+
+			return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return ResourceName.GetHashCode();
+        }
+    }
 }

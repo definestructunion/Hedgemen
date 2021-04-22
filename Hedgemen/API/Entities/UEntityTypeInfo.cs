@@ -18,6 +18,6 @@ namespace Hgm.API.Entities
 
 		public string GetName() => Names[Hedgemen.Rng.EntityRng.Next(0, Names.Count)];
 
-		public IEntityBehaviour GetBehaviour() => Hedgemen.Libraries.EntityBehaviours[EntityBehaviourName]();
+		public IEntityBehaviour GetBehaviour() => Hedgemen.Libraries.EntityBehaviours.Get(EntityBehaviourName)();
 	}
 }

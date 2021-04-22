@@ -14,9 +14,9 @@ namespace Hgm.Content
 		public static ResourceName AreaOverworldCartographerName => "hedgemen:areas/cartographers/overworld";
 		public static ResourceName AreaOverworldLandscaperName => "hedgemen:areas/landscapers/overworld";
 
-		public static UAreaTypeInfo AreaOverworld => Hedgemen.Libraries.AreaTypes[AreaOverworldName];
-		public static UCartographer AreaOverworldCartographer => Hedgemen.Libraries.Cartographers[AreaOverworldCartographerName];
-		public static Func<Landscaper> AreaOverworldLandscaper => Hedgemen.Libraries.Landscapers[AreaOverworldLandscaperName];
+		public static UAreaTypeInfo AreaOverworld => Hedgemen.Libraries.AreaTypes.Get(AreaOverworldName);
+		public static UCartographer AreaOverworldCartographer => Hedgemen.Libraries.Cartographers.Get(AreaOverworldCartographerName);
+		public static Func<Landscaper> AreaOverworldLandscaper => Hedgemen.Libraries.Landscapers.Get(AreaOverworldLandscaperName);
 		
 		public HedgemenMod()
 		{

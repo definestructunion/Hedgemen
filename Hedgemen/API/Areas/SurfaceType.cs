@@ -1,6 +1,6 @@
 namespace Hgm.API.Areas
 {
-    public interface IArea
+    public class SurfaceType
     {
         
     }

@@ -1,4 +1,5 @@
 ﻿using Hgm.API.Areas;
+using Hgm.API.Areas.Dungeon;
 using Hgm.API.Areas.World;
 using Maths;
 
@@ -12,9 +13,10 @@ namespace Hgm.Content.Landscapers
 			{
 				for (int x = 0; x < area.AreaMap.Width; ++x)
 				{
-					//var pos = new MapPos(x, y);
-					//var cell = new UCell(pos);
-					//area.AreaMap.SetCellAt(pos, cell);
+					var pos = new MapPos(x, y);
+					var cell = area.AreaMap.GetCellAt(pos);
+					cell.EnvironmentInfo.Biome = new BiomeGenericDungeon();
+					cell.EnvironmentInfo.HeightValue = x * y;
 				}
 			}
 		}

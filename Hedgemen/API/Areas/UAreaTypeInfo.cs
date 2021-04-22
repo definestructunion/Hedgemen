@@ -25,8 +25,8 @@ namespace Hgm.API.Areas
 		
 		public string GetName() => Name;
 
-		public IAreaBehaviour GetBehaviour() => Hedgemen.Libraries.AreaBehaviours[AreaBehaviourName]();
+		public IAreaBehaviour GetBehaviour() => Hedgemen.Libraries.AreaBehaviours.Get(AreaBehaviourName)();
 
-		public UCartographer GetCartographer() => Hedgemen.Libraries.Cartographers[AreaCartographerName];
+		public UCartographer GetCartographer() => Hedgemen.Libraries.Cartographers.Get(AreaCartographerName);
 	}
 }

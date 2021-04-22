@@ -38,11 +38,9 @@ namespace Hgm.Engine.Assets
 
 		public static Effect CreateEffect(AssetManager assets, ResourceName resourceName, FileHandle fileHandle)
 		{
-			return assets.Load<Effect>(new AssetLoadPass
-			{
-				ResourceName = resourceName,
-				File = fileHandle
-			});
+			var asset = new Effect(assets.Graphics.GraphicsDevice, fileHandle.ReadBytes());
+			assets.LoadDirect(resourceName, asset);
+			return asset;
 		}
 
 		public static SpriteFont CreateSpriteFont(AssetManager assets, ResourceName resourceName, FileHandle fileHandle)

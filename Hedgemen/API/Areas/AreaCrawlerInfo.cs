@@ -1,7 +1,0 @@
-﻿namespace Hgm.API.Areas
-{
-	public class AreaCrawlerInfo : CellEnvironmentInfo
-	{
-		
-	}
-}
